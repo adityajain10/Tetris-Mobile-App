@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+
+<head> 
+<title>Tetris Game </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="css/azstyle.css" type="text/css"/>
+<link rel="stylesheet" href="css/azpink.css" type="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="css/azmobile.css" type="text/css"/>
+<script src="js/gamesound.js"></script>
+</head>
+
+<body>
+<div id="centerw2">
+<audio id="pop" preload="auto"><source src="sound/pop.ogg" type="audio/ogg" /><source src="sound/pop.mp3" type="audio/mpeg" /></audio>
+<audio id="turn" preload="auto"><source src="sound/click1.ogg" type="audio/ogg" /><source src="sound/click1.mp3" type="audio/mpeg" /></audio> 
+<audio id="touch" preload="auto"><source src="sound/jumping.ogg" type="audio/ogg" /><source src="sound/jumping.mp3" type="audio/mpeg" /></audio>
+<audio id="done" preload="auto"><source src="sound/done.ogg" type="audio/ogg" /><source src="sound/done.mp3" type="audio/mpeg" /></audio>
+
+<div class="center">
+<table>
+	<tr>
+		<td style="width:400px;">
+<div id="az0" style="position:relative;height:400px;">
+<canvas id="canvas" style="position:absolute;top:0px;left:0px;">
+</canvas>
+<div id="az1" style="position:absolute;top:0px;left:0px;">
+<img src="images/tetris-bkg.jpg" width="400" height="400" alt=""/>
+</div>
+<div id="az2" style="z-index:3;position:absolute;top:305px;left:280px;">
+<button style="background-color:green; height:25px" onclick="listen();">START</button>
+</div> <!-- #az2 -->
+</div> <!-- #az1 -->
+		</td>
+	</tr>
+  <tr>
+ <td>
+
+  <div id="azbuttons" style="display:none;">
+ <button style="cursor:pointer;height:36px;width:36px;" onclick="KEY_WHICH = KEY_LEFT;"><b>&#8592;</b></button>&nbsp;&nbsp;
+ <button style="cursor:pointer;height:36px;width:36px;" onclick="KEY_WHICH = KEY_UP;"><b>&#8635;</b></button>&nbsp;&nbsp;
+ <button style="cursor:pointer;height:36px;width:36px;" onclick="KEY_WHICH = KEY_RIGHT;"><b>&#8594;</b></button>&nbsp;&nbsp;
+ <button style="cursor:pointer;height:36px;width:36px;" onclick="KEY_WHICH = KEY_DOWN;"><b>&#8595;</b></button>&nbsp;&nbsp;
+ <button style="cursor:pointer;height:36px;width:36px;" onclick="KEY_WHICH = KEY_X;"><b>X</b></button>&nbsp;&nbsp;
+ <button style="cursor:pointer;height:36px;width:36px;" onclick="KEY_WHICH = KEY_P;"><b>P</b></button>
+ </div>
+ </td>  
+  </tr>
+</table>
+</div> 
+
+<script type="text/javascript" src="js/tetris.js"></script>
+<script type="text/javascript">
+   // for devices with touch screens (phones and tablets) display control buttons
+var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));   
+   if (isTouch) {
+     document.getElementById("azbuttons").style.display = "block";
+   }
+</script>
+
+</div> 
+</body>
+</html>
